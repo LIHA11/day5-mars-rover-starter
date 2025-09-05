@@ -60,5 +60,14 @@ public class MarsRover {
         }
 
     }
+    public void executeCommands(java.util.List<String> commands) {
+        for (String command : commands) {
+            move(command);
+        }
+    }
+    public void executeCommands(String commands) {
+        for (String command : commands.split(",")) {
+            move(command.trim());
+        }
+    }
 }
-

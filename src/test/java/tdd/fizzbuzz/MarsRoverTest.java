@@ -158,8 +158,25 @@ public class MarsRoverTest {
         assertEquals("N",marsRover.direction);
     }
 
+    @Test
+    public void should_execute_batch_commands_by_list() {
+        MarsRover marsRover = new MarsRover(1, 1, "N");
+        java.util.List<String> commands = java.util.Arrays.asList("move", "right", "move", "left", "back");
+        marsRover.executeCommands(commands);
+        // 1,1,N -> move -> 1,2,N -> right -> 1,2,E -> move -> 2,2,E -> left -> 2,2,N -> back -> 2,1,N
+        assertEquals(2, marsRover.x);
+        assertEquals(1, marsRover.y);
+        assertEquals("N", marsRover.direction);
+    }
+
+    @Test
+    public void should_execute_batch_commands_by_string() {
+        MarsRover marsRover = new MarsRover(0, 0, "E");
+        marsRover.executeCommands("move,move,right,move,left,back");
+        // 0,0,E -> move -> 1,0,E -> move -> 2,0,E -> right -> 2,0,S -> move -> 2,-1,S -> left -> 2,-1,E -> back -> 1,-1,E
+        assertEquals(1, marsRover.x);
+        assertEquals(-1, marsRover.y);
+        assertEquals("E", marsRover.direction);
+    }
+
 }
-
-
-
-
