@@ -43,6 +43,7 @@ public class MarsRoverTest {
         assertEquals(1,marsRover.y);
         assertEquals("E",marsRover.direction);
     }
+
 //    @Test
 //    public void should_return_x_1_y_1_W_when_x_1_y_1_left_N(){
 //        String command = "left";
