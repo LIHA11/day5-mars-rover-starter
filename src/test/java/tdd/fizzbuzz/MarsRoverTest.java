@@ -24,15 +24,15 @@ public class MarsRoverTest {
         assertEquals(0,marsRover.y);
         assertEquals("S",marsRover.direction);
     }
-//    @Test
-//    public void should_return_x_0_y_1_W_when_x_1_y_1_move_W(){
-//        String direction = "move";
-//        MarsRover marsRover = new MarsRover(1,1,"W");
-//        marsRover.move(direction);
-//        assertEquals(0,marsRover.x);
-//        assertEquals(1,marsRover.y);
-//        assertEquals("W",marsRover.direction);
-//    }
+    @Test
+    public void should_return_x_0_y_1_W_when_x_1_y_1_move_W(){
+        String direction = "move";
+        MarsRover marsRover = new MarsRover(1,1,"W");
+        marsRover.move(direction);
+        assertEquals(0,marsRover.x);
+        assertEquals(1,marsRover.y);
+        assertEquals("W",marsRover.direction);
+    }
 
 //    @Test
 //    public void should_return_x_2_y_1_S_when_x_1_y_1_move_E(){
