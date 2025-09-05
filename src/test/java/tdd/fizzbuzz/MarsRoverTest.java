@@ -1,0 +1,115 @@
+package tdd.fizzbuzz;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class MarsRoverTest {
+//    @Test
+//    public void should_return_1_when_input_1() {
+//        int order = 1;
+//        String word = FizzBuzz.countoff(order);
+//        assertEquals ("1", word);
+//    }
+//    @Test
+//    public void should_return_2_when_input_2() {
+//        int order = 2;
+//        String word = FizzBuzz.countoff(order);
+//        assertEquals("2", word);
+//    }
+//
+//    @Test
+//    public void should_return_Fizz_when_input_3() {
+//        int order = 3;
+//        String word = FizzBuzz.countoff(order);
+//        assertEquals("Fizz", word);
+//    }
+
+//    @Test
+//    public void should_return_Buzz_when_input_5() {
+//        int order = 5;
+//        String word = FizzBuzz.countoff(order);
+//        assertEquals("Buzz", word);
+//    }
+//
+//    @Test
+//    public void should_return_FizzBuzz_when_input_15() {
+//        int order = 15;
+//        String word = FizzBuzz.countoff(order);
+//        assertEquals("FizzBuzz", word);
+//    }
+    @Test
+    public void should_return_x_1_y_2_N_when_x_1_y_1_move_N(){
+        String direction = "N";
+        MarsRover marsRover = new MarsRover(1,1,"N");
+        marsRover.move(direction);
+        assertEquals(1,marsRover.getX());
+        assertEquals(2,marsRover.getY());
+        assertEquals("N",marsRover.getDirection());
+    }
+    @Test
+    public void should_return_x_1_y_0_S_when_x_1_y_1_move_S(){
+        String direction = "S";
+        MarsRover marsRover = new MarsRover(1,1,"S");
+        marsRover.move(direction);
+        assertEquals(1,marsRover.getX());
+        assertEquals(0,marsRover.getY());
+        assertEquals("S",marsRover.getDirection());
+    }
+    @Test
+    public void should_return_x_0_y_1_W_when_x_1_y_1_move_W(){
+        String direction = "W";
+        MarsRover marsRover = new MarsRover(1,1,"W");
+        marsRover.move(direction);
+        assertEquals(0,marsRover.getX());
+        assertEquals(1,marsRover.getY());
+        assertEquals("W",marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_x_2_y_1_S_when_x_1_y_1_move_E(){
+        String direction = "E";
+        MarsRover marsRover = new MarsRover(1,1,"E");
+        marsRover.move(direction);
+        assertEquals(2,marsRover.getX());
+        assertEquals(1,marsRover.getY());
+        assertEquals("E",marsRover.getDirection());
+    }
+    @Test
+    public void should_return_x_1_y_1_W_when_x_1_y_1_left_N(){
+
+    }
+    @Test
+    public void should_return_x_1_y_1_N_when_x_1_y_1_left_E(){
+
+    }
+    @Test
+    public void should_return_x_1_y_1_E_when_x_1_y_1_left_S(){
+
+    }
+    @Test
+    public void should_return_x_1_y_1_S_when_x_1_y_1_left_W(){
+
+    }
+    @Test
+    public void should_return_x_1_y_1_E_when_x_1_y_1_right_N(){
+
+    }
+    @Test
+    public void should_return_x_1_y_1_S_when_x_1_y_1_right_E(){
+
+    }
+    @Test
+    public void should_return_x_1_y_1_W_when_x_1_y_1_right_S(){
+
+    }
+    @Test
+    public void should_return_x_1_y_1_N_when_x_1_y_1_right_W(){
+
+    }
+
+}
+
+
+
+
