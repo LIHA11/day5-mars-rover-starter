@@ -30,12 +30,12 @@ public class FizzBuzzTest {
         assert word.equals("Buzz");
     }
 
-//    @Test
-//    public void should_return_FizzBuzz_when_input_15() {
-//        int order = 15;
-//        String word = FizzBuzz.countoff(order);
-//        assert word.equals("FizzBuzz");
-//    }
+    @Test
+    public void should_return_FizzBuzz_when_input_15() {
+        int order = 15;
+        String word = FizzBuzz.countoff(order);
+        assert word.equals("FizzBuzz");
+    }
 }
 
 
