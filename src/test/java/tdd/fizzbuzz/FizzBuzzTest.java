@@ -15,4 +15,29 @@ public class FizzBuzzTest {
         String word = FizzBuzz.countoff(order);
         assert word.equals("2");
     }
+
+    @Test
+    public void should_return_Fizz_when_input_3() {
+        int order = 3;
+        String word = FizzBuzz.countoff(order);
+        assert word.equals("Fizz");
+    }
+
+//    @Test
+//    public void should_return_Buzz_when_input_5() {
+//        int order = 5;
+//        String word = FizzBuzz.countoff(order);
+//        assert word.equals("Buzz");
+//    }
+//
+//    @Test
+//    public void should_return_FizzBuzz_when_input_15() {
+//        int order = 15;
+//        String word = FizzBuzz.countoff(order);
+//        assert word.equals("FizzBuzz");
+//    }
 }
+
+
+
+
