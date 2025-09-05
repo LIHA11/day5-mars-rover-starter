@@ -6,6 +6,10 @@ public class FizzBuzz {
         ) {
             return "Fizz";
         }
+        else if (order % 5 == 0
+        ) {
+            return "Buzz";
+        }
         return  "" + order;
     }
 }
