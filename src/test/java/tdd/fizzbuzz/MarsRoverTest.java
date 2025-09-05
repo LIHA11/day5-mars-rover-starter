@@ -69,7 +69,7 @@ public class MarsRoverTest {
         String direction = "back";
         MarsRover marsRover = new MarsRover(1,1,"E");
         marsRover.move(direction);
-        assertEquals(2,marsRover.x);
+        assertEquals(0,marsRover.x);
         assertEquals(1,marsRover.y);
         assertEquals("E",marsRover.direction);
     }
