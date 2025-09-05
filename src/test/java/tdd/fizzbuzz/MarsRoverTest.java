@@ -44,15 +44,15 @@ public class MarsRoverTest {
         assertEquals("E",marsRover.direction);
     }
 
-//    @Test
-//    public void should_return_x_1_y_1_W_when_x_1_y_1_left_N(){
-//        String command = "left";
-//        MarsRover marsRover = new MarsRover(1,1,"N");
-//        marsRover.move(command);
-//        assertEquals(1,marsRover.x);
-//        assertEquals(1,marsRover.y);
-//        assertEquals("W",marsRover.direction);
-//    }
+    @Test
+    public void should_return_x_1_y_1_W_when_x_1_y_1_left_N(){
+        String command = "left";
+        MarsRover marsRover = new MarsRover(1,1,"N");
+        marsRover.move(command);
+        assertEquals(1,marsRover.x);
+        assertEquals(1,marsRover.y);
+        assertEquals("W",marsRover.direction);
+    }
 //    @Test
 //    public void should_return_x_1_y_1_N_when_x_1_y_1_left_E(){
 //        String command = "left";
