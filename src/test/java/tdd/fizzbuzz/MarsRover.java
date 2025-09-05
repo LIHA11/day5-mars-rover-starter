@@ -61,13 +61,9 @@ public class MarsRover {
 
     }
     public void executeCommands(java.util.List<String> commands) {
-        for (String command : commands) {
-            move(command);
-        }
+        commands.stream().forEach(this::move);
     }
     public void executeCommands(String commands) {
-        for (String command : commands.split(",")) {
-            move(command.trim());
-        }
+        java.util.Arrays.stream(commands.split(",")).map(String::trim).forEach(this::move);
     }
 }
