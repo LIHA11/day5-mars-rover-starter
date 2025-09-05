@@ -45,6 +45,16 @@ public class MarsRoverTest {
     }
 
     @Test
+    public void should_return_x_1_y_0_N_when_x_1_y_1_moveBackward_N(){
+        String direction = "back";
+        MarsRover marsRover = new MarsRover(1,1,"N");
+        marsRover.move(direction);
+        assertEquals(1,marsRover.x);
+        assertEquals(0,marsRover.y);
+        assertEquals("N",marsRover.direction);
+    }
+
+    @Test
     public void should_return_x_1_y_1_W_when_x_1_y_1_left_N(){
         String command = "left";
         MarsRover marsRover = new MarsRover(1,1,"N");

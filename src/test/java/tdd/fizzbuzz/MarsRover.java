@@ -23,6 +23,19 @@ public class MarsRover {
                 this.x -= 1;
             }
         }
+
+        if(command.equals("back")){
+            if (direction.equals(MarsDirectionEnum.N.name())) {
+                this.y -= 1;
+            } else if (direction.equals(MarsDirectionEnum.S.name())) {
+                this.y += 1;
+            } else if (direction.equals(MarsDirectionEnum.E.name())) {
+                this.x -= 1;
+            } else if (direction.equals(MarsDirectionEnum.W.name())) {
+                this.x += 1;
+            }
+        }
+
         if (command.equals("left")) {
             if (direction.equals(MarsDirectionEnum.N.name())) {
                 this.direction = MarsDirectionEnum.W.name();
@@ -48,3 +61,4 @@ public class MarsRover {
 
     }
 }
+
