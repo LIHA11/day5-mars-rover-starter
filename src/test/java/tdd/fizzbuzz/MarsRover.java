@@ -13,36 +13,36 @@ public class MarsRover {
 
     public void move(String command) {
         if (command.equals("move")) {
-            if (direction.equals("N")) {
+            if (direction.equals(MarsDirectionEnum.N.name())) {
                 this.y += 1;
-            } else if (direction.equals("S")) {
+            } else if (direction.equals(MarsDirectionEnum.S.name())) {
                 this.y -= 1;
-            } else if (direction.equals("E")) {
+            } else if (direction.equals(MarsDirectionEnum.E.name())) {
                 this.x += 1;
-            } else if (direction.equals("W")) {
+            } else if (direction.equals(MarsDirectionEnum.W.name())) {
                 this.x -= 1;
             }
         }
         if (command.equals("left")) {
-            if (direction.equals("N")) {
-                this.direction = "W";
-            } else if (direction.equals("W")) {
-                this.direction = "S";
-            } else if (direction.equals("S")) {
-                this.direction = "E";
-            } else if (direction.equals("E")) {
-                this.direction = "N";
+            if (direction.equals(MarsDirectionEnum.N.name())) {
+                this.direction = MarsDirectionEnum.W.name();
+            } else if (direction.equals(MarsDirectionEnum.W.name())) {
+                this.direction = MarsDirectionEnum.S.name();
+            } else if (direction.equals(MarsDirectionEnum.S.name())) {
+                this.direction = MarsDirectionEnum.E.name();
+            } else if (direction.equals(MarsDirectionEnum.E.name())) {
+                this.direction = MarsDirectionEnum.N.name();
             }
         }
         if (command.equals("right")) {
-            if (direction.equals("N")) {
-                this.direction = "E";
-            } else if (direction.equals("E")) {
-                this.direction = "S";
-            } else if (direction.equals("S")) {
-                this.direction = "W";
-            } else if (direction.equals("W")) {
-                this.direction = "N";
+            if (direction.equals(MarsDirectionEnum.N.name())) {
+                this.direction = MarsDirectionEnum.E.name();
+            } else if (direction.equals(MarsDirectionEnum.E.name())) {
+                this.direction = MarsDirectionEnum.S.name();
+            } else if (direction.equals(MarsDirectionEnum.S.name())) {
+                this.direction = MarsDirectionEnum.W.name();
+            } else if (direction.equals(MarsDirectionEnum.W.name())) {
+                this.direction = MarsDirectionEnum.N.name();
             }
         }
 
