@@ -1,9 +1,21 @@
 package tdd.fizzbuzz;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class MarsRover {
     public int x;
     public int y;
     public String direction;
+
+    private static final Map<String, Command> commandMap = new HashMap<>();
+    static {
+        commandMap.put("move", new MoveCommand());
+        commandMap.put("back", new BackCommand());
+        commandMap.put("left", new LeftCommand());
+        commandMap.put("right", new RightCommand());
+    }
 
     public MarsRover(int x, int y, String direction) {
         this.x = x;
@@ -12,56 +24,14 @@ public class MarsRover {
     }
 
     public void move(String command) {
-        if (command.equals("move")) {
-            if (direction.equals(MarsDirectionEnum.N.name())) {
-                this.y += 1;
-            } else if (direction.equals(MarsDirectionEnum.S.name())) {
-                this.y -= 1;
-            } else if (direction.equals(MarsDirectionEnum.E.name())) {
-                this.x += 1;
-            } else if (direction.equals(MarsDirectionEnum.W.name())) {
-                this.x -= 1;
-            }
+        Command cmd = commandMap.get(command);
+        if (cmd != null) {
+            cmd.execute(this);
         }
-
-        if(command.equals("back")){
-            if (direction.equals(MarsDirectionEnum.N.name())) {
-                this.y -= 1;
-            } else if (direction.equals(MarsDirectionEnum.S.name())) {
-                this.y += 1;
-            } else if (direction.equals(MarsDirectionEnum.E.name())) {
-                this.x -= 1;
-            } else if (direction.equals(MarsDirectionEnum.W.name())) {
-                this.x += 1;
-            }
-        }
-
-        if (command.equals("left")) {
-            if (direction.equals(MarsDirectionEnum.N.name())) {
-                this.direction = MarsDirectionEnum.W.name();
-            } else if (direction.equals(MarsDirectionEnum.W.name())) {
-                this.direction = MarsDirectionEnum.S.name();
-            } else if (direction.equals(MarsDirectionEnum.S.name())) {
-                this.direction = MarsDirectionEnum.E.name();
-            } else if (direction.equals(MarsDirectionEnum.E.name())) {
-                this.direction = MarsDirectionEnum.N.name();
-            }
-        }
-        if (command.equals("right")) {
-            if (direction.equals(MarsDirectionEnum.N.name())) {
-                this.direction = MarsDirectionEnum.E.name();
-            } else if (direction.equals(MarsDirectionEnum.E.name())) {
-                this.direction = MarsDirectionEnum.S.name();
-            } else if (direction.equals(MarsDirectionEnum.S.name())) {
-                this.direction = MarsDirectionEnum.W.name();
-            } else if (direction.equals(MarsDirectionEnum.W.name())) {
-                this.direction = MarsDirectionEnum.N.name();
-            }
-        }
-
     }
-    public void executeCommands(java.util.List<String> commands) {
-        commands.stream().forEach(this::move);
+
+    public void executeCommands(List<String> commands) {
+        commands.forEach(this::move);
     }
     public void executeCommands(String commands) {
         java.util.Arrays.stream(commands.split(",")).map(String::trim).forEach(this::move);
